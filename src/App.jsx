@@ -77,6 +77,7 @@ export default function App() {
         (emp.firstName || '').toLowerCase().includes(query) ||
         (emp.lastName || '').toLowerCase().includes(query) ||
         (emp.email || '').toLowerCase().includes(query) ||
+        (emp.phone || '').toLowerCase().includes(query) ||
         (emp.role || '').toLowerCase().includes(query) ||
         (emp.id || '').toLowerCase().includes(query) ||
         (emp.department || '').toLowerCase().includes(query)

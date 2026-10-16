@@ -1,6 +1,6 @@
 import React from 'react';
-import { Eye, Edit2, Trash2, MapPin, UserX, Inbox } from 'lucide-react';
-import { formatCurrency, formatDate, getInitials } from '../utils/helpers';
+import { Eye, Edit2, Trash2, Phone, Inbox } from 'lucide-react';
+import { getInitials } from '../utils/helpers';
 
 export default function EmployeeTable({
   employees = [],
@@ -70,8 +70,7 @@ export default function EmployeeTable({
             <th>ID</th>
             <th>Department</th>
             <th>Role & Type</th>
-            <th>Salary</th>
-            <th>Start Date</th>
+            <th>Phone Number</th>
             <th>Status</th>
             <th style={{ textAlign: 'right' }}>Actions</th>
           </tr>
@@ -125,11 +124,11 @@ export default function EmployeeTable({
                     </span>
                   </div>
                 </td>
-                <td style={{ fontWeight: 600, color: '#f1f5f9' }}>
-                  {formatCurrency(emp.salary)}
-                </td>
-                <td style={{ color: '#94a3b8', fontSize: '0.8125rem' }}>
-                  {formatDate(emp.startDate)}
+                <td>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#cbd5e1', fontSize: '0.875rem' }}>
+                    <Phone size={14} style={{ color: '#64748b', flexShrink: 0 }} />
+                    {emp.phone || 'N/A'}
+                  </span>
                 </td>
                 <td>
                   {getStatusBadge(emp.status)}
